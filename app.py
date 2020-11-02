@@ -35,6 +35,10 @@ X = pd.concat([X, X_dummies], axis=1)
 X.drop(X.index, axis=0, inplace=True)
 
 
+@app.route("/", methods=["GET"])
+def helloWorld():
+	return "Hello World"
+
 @app.route("/predictRandomForest", methods=["GET"])
 def predictRandomForest():
     global X
